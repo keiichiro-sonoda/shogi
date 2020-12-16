@@ -25,7 +25,7 @@ void monkey(void) {
 enum animal select(void) {
     int tmp;
     do {
-        printf("0…犬　1…猫　2…猿　3…終了：");
+        printf("0… 犬  1… 猫  2… 猿  3… 終了：");
         scanf("%d", &tmp);
     } while (tmp < Dog || tmp > Invalid);
     return tmp;
