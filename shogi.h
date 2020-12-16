@@ -4,10 +4,10 @@
 #include "macros01.h"
 
 // 駒を列挙型で定義してみた
-enum PIECES {EMPTY, PAWN, LANCE, KNIGHT, SILVER, GOLD, BISHOP, ROOK, KING};
+enum PIECES {EMPTY, PAWN, LANCE, KNIGHT, SILVER, GOLD, BISHOP, ROOK, KING, SENTINEL};
 
 typedef struct board {
-    u_char a;
+    u_char b[111];
 } Board;
 
 #endif
