@@ -35,5 +35,7 @@ int main(void) {
     enum PIECES a;
     a = KING;
     printDecimal(a);
+    printSize(Board);
+    printSize(a);
     return 0;
 }
