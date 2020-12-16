@@ -2,7 +2,7 @@
     選ばれた動物の鳴き声を表示
 */
 
-#include <stdio.h>
+#include "shogi.h"
 
 enum animal {Dog, Cat, Monkey, Invalid};
 
@@ -32,15 +32,8 @@ enum animal select(void) {
 }
 
 int main(void) {
-    enum animal selected;
-
-    do {
-        switch (selected = select()) {
-            case Dog   : dog();    break;
-            case Cat   : cat();    break;
-            case Monkey: monkey(); break;
-        }
-    } while (selected != Invalid);
-
+    enum PIECES a;
+    a = KING;
+    printDecimal(a);
     return 0;
 }
