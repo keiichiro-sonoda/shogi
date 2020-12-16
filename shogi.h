@@ -10,7 +10,9 @@ typedef struct board {
     u_char brd[111];
 } Board;
 
+// 盤面表示してみたい (とりあえず数値)
+void showBoardNum(Board b);
 
-
+void resetBoard(Board *bp);
 
 #endif

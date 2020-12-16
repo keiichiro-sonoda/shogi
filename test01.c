@@ -32,11 +32,8 @@ enum animal selectAnimal(void) {
 }
 
 int main(void) {
-    enum PIECES a;
-    a = SENTINEL;
-    printByte(SENTINEL);
-    printDecimal(a);
-    printSize(Board);
-    printSize(a);
+    Board b;
+    resetBoard(&b);
+    showBoardNum(b);
     return 0;
 }

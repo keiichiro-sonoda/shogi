@@ -9,7 +9,7 @@
 #define printDecimal(x) printf("%d\n", (int)(x))
 // バイト数を表示
 #define printSize(x) printf("%ld\n", sizeof(x))
-// 下位8ビット (1バイト) のみ表示
-#define printByte(x) printf("%x", (x) & 0xff)
+// 下位8ビット (1バイト) のみ16進表示
+#define printByteHex(x) printf("%x", (x) & 0xff)
 
 #endif

@@ -2,7 +2,11 @@
 
 // 盤面表示してみたい (とりあえず数値)
 void showBoardNum(Board b) {
-    ;
+    for (int i = 0; i < 111; i++) {
+        printByteHex(b.brd[i]);
+        putchar(' ');
+    }
+    puts("");
 }
 
 void resetBoard(Board *bp) {
