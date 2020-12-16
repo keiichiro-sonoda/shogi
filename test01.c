@@ -33,7 +33,7 @@ enum animal selectAnimal(void) {
 
 int main(void) {
     enum PIECES a;
-    a = KING;
+    a = SENTINEL;
     printDecimal(a);
     printSize(Board);
     printSize(a);
