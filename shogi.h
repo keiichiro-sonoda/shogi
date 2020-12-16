@@ -6,4 +6,8 @@
 // 駒を列挙型で定義してみた
 enum PIECES {EMPTY, PAWN, LANCE, KNIGHT, SILVER, GOLD, BISHOP, ROOK, KING};
 
+typedef struct board {
+    u_char a;
+} Board;
+
 #endif

@@ -22,7 +22,7 @@ void monkey(void) {
 }
 
 /*--- 動物を選ぶ ---*/
-enum animal select(void) {
+enum animal selectAnimal(void) {
     int tmp;
     do {
         printf("0… 犬  1… 猫  2… 猿  3… 終了：");
