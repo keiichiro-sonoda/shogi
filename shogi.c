@@ -20,12 +20,14 @@ void showBoard(Board b) {
     for (i = 0; i < SIDE_LEN; i++) {
         for (j = 0; j < SIDE_LEN; j++) {
             str[k++] = PIECES_CHAR[b.brd[i * 10 + j + 11] & 0xf];
+            str[k++] = ' ';
         }
         str[k++] = 10;
     }
     str[k] = 0;
     //puts(str);
     printf("%s", str);
+    printDecimal(' ');
 }
 
 // 盤面初期化
