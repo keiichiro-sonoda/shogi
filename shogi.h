@@ -1,7 +1,7 @@
 #ifndef SHOGI_H
 #define SHOGI_H
 
-#include "macros01.h"
+#include "mixed01.h"
 
 // 盤面型で使われる長さ
 #define BRD_LEN 111
