@@ -15,16 +15,27 @@ void showBoardNum(Board b) {
 // 盤面初期化
 void resetBoard(Board *bp) {
     int i;
+    u_char koma;
     for (i = 0; i < BRD_LEN; i++) {
         if (i < 10 || i % 10 == 0 || 100 < i) {
-            bp->brd[i] = SENTINEL;
+            koma = SENTINEL;
         }
-        else if (i == 11 || i == 19) {
-            bp->brd[i] = TURN | LANCE;
+        else if (i == 11 || i == 19 || i == 91 || i == 99) {
+            koma = LANCE;
+        }
+        else if (i == 12 || i == 18 || i == 92 || i == 98) {
+            koma = KNIGHT;
+        }
+        else if (i == 13 || i == 17 || i == 93 || i == 97) {
+            koma = SILVER;
         }
         else {
-            bp->brd[i] = EMPTY;
+            koma = EMPTY;
         }
+        if (koma && i < 40) {
+            koma |= TURN;
+        }
+        bp->brd[i] = koma;
     }
     for (i = 0; i < HOLD_LEN; i++) {
         bp->hold[i] = 0;
