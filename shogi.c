@@ -45,6 +45,7 @@ void showBoard(Board b) {
     }
     str[k] = 0;
     puts(str);
+    printDecimal(k);
 }
 
 // 盤面初期化
