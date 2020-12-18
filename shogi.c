@@ -17,7 +17,7 @@ void showBoard(Board b) {
     int i, j, k;
     char str[BUF_LEN];
     u_char koma;
-    k = 0;
+    k = strcatPlus(str, "hold2: ", BUF_LEN);
     for (i = PAWN; i < KING; i++) {
         str[k++] = PIECES_CHAR[i];
         str[k++] = b.hold[i | 8] + '0';
