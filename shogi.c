@@ -4,7 +4,7 @@
 void showBoardNum(Board b) {
     for (int i = 0; i < SIDE_LEN; i++) {
         for (int j = 0; j < SIDE_LEN; j++) {
-            printByteHex(b.brd[(i + 1) * 9 + j + 1]);
+            printByteHex(b.brd[i * 10 + j + 11]);
             putchar(' ');
         }
         putchar(10);
