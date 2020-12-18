@@ -15,10 +15,18 @@ void showBoardNum(Board b) {
 void resetBoard(Board *bp) {
     for (int i = 0; i < BRD_LEN; i++) {
         if (i < 10 || i % 10 == 0 || 100 < i) {
-            bp->brd[i] = EMPTY;
-        } else {
-            //bp->brd[i] = PAWN;
             bp->brd[i] = SENTINEL;
+        } else {
+            bp->brd[i] = EMPTY;
         }
     }
+    for (int i = 0; i < SIDE_LEN + 2; i++) {
+        for (int j = 0; j < SIDE_LEN + 1; j++) {
+            printByteHex(bp->brd[i * 10 + j]);
+            putchar(' ');
+        }
+        putchar(10);
+    }
+    printByteHex(bp->brd[110]);
+    putchar(10);
 }
