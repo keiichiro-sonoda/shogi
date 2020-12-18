@@ -13,7 +13,7 @@
 #define SIDE_LEN 9
 
 // 駒の文字
-#define PIECES_CHAR " PLNSGBRK"
+#define PIECES_CHAR "-PLNSGBRK"
 
 // 駒を列挙型で定義してみた
 enum PIECES {EMPTY, PAWN, LANCE, KNIGHT, SILVER, GOLD, BISHOP, ROOK, KING, SENTINEL=0xff};

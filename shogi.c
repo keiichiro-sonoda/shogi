@@ -27,9 +27,9 @@ void showBoard(Board b) {
             }
             str[k++] = PIECES_CHAR[koma & 0xf];
             if (koma & TURN) {
-                str[k++] = '2';
+                str[k++] = 50;
             } else if (koma) {
-                str[k++] = '1';
+                str[k++] = 49;
             } else {
                 str[k++] = 32;
             }
@@ -40,7 +40,8 @@ void showBoard(Board b) {
     str[k] = 0;
     //puts(str);
     printf("%s", str);
-    printDecimal('+');
+    printDecimal('1');
+    printDecimal('2');
 }
 
 // 盤面初期化
