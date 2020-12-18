@@ -5,6 +5,8 @@
 #include "stdio.h"
 #include "stdlib.h"
 
+#define BUF_LEN 1024
+
 // int 型にキャストして10進表示
 #define printDecimal(x) printf("%d\n", (int)(x))
 // バイト数を表示

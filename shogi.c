@@ -14,7 +14,18 @@ void showBoardNum(Board b) {
 
 // 盤面の駒をアルファベットで表示したい
 void showBoard(Board b) {
-    ;
+    int i, j, k;
+    char str[BUF_LEN];
+    k = 0;
+    for (i = 0; i < SIDE_LEN; i++) {
+        for (j = 0; j < SIDE_LEN; j++) {
+            str[k++] = PIECES_CHAR[b.brd[i * 10 + j + 11] & 0xf];
+        }
+        str[k++] = 10;
+    }
+    str[k] = 0;
+    //puts(str);
+    printf("%s", str);
 }
 
 // 盤面初期化
@@ -60,6 +71,7 @@ void resetBoard(Board *bp) {
     for (i = 0; i < HOLD_LEN; i++) {
         bp->hold[i] = 0;
     }
+    /*
     for (int i = 0; i < SIDE_LEN + 2; i++) {
         for (int j = 0; j < SIDE_LEN + 1; j++) {
             printByteHex(bp->brd[i * 10 + j]);
@@ -69,4 +81,5 @@ void resetBoard(Board *bp) {
     }
     printByteHex(bp->brd[110]);
     putchar(10);
+    */
 }
