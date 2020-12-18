@@ -6,6 +6,9 @@
 // 盤面型で使われる長さ
 #define BRD_LEN 111
 
+// 持ち駒配列の長さ
+#define HOLD_LEN 16
+
 // 辺の長さ
 #define SIDE_LEN 9
 
@@ -22,7 +25,7 @@ enum FLAGS {TURN = 0b10000, PROMOTED = 0b100000};
 // 添字 0 と 8 は使わない?
 typedef struct board {
     u_char brd[BRD_LEN];
-    u_char hold[16];
+    u_char hold[HOLD_LEN];
 } Board;
 
 // 盤面表示してみたい (とりあえず数値)
