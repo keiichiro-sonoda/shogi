@@ -12,6 +12,9 @@
 // 辺の長さ
 #define SIDE_LEN 9
 
+// 駒の文字
+#define PIECES_CHAR " PLNSGBRK"
+
 // 駒を列挙型で定義してみた
 enum PIECES {EMPTY, PAWN, LANCE, KNIGHT, SILVER, GOLD, BISHOP, ROOK, KING, SENTINEL=0xff};
 
@@ -30,6 +33,9 @@ typedef struct board {
 
 // 盤面表示してみたい (とりあえず数値)
 void showBoardNum(Board b);
+
+// 盤面の駒をアルファベットで表示したい
+void showBoard(Board b);
 
 void resetBoard(Board *bp);
 

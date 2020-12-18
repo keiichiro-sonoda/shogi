@@ -12,6 +12,11 @@ void showBoardNum(Board b) {
     }
 }
 
+// 盤面の駒をアルファベットで表示したい
+void showBoard(Board b) {
+    ;
+}
+
 // 盤面初期化
 void resetBoard(Board *bp) {
     int i, row;

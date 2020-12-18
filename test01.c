@@ -35,5 +35,6 @@ int main(void) {
     Board b;
     resetBoard(&b);
     showBoardNum(b);
+    showBoard(b);
     return 0;
 }
