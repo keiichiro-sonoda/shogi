@@ -11,14 +11,13 @@ void showBoardNum(Board b) {
     }
 }
 
+// 盤面初期化
 void resetBoard(Board *bp) {
-    int i;
-    for (i = 0; i < BRD_LEN; i++) {
-        bp->brd[i] = EMPTY;
-    }
-    for (i = 0; i < 10; i++) {
-        bp->brd[i] = SENTINEL;
-        bp->brd[(i + 1) * 10] = SENTINEL;
-        bp->brd[101 + i] = SENTINEL;
+    for (int i = 0; i < BRD_LEN; i++) {
+        if (i < 10 || i % 10 == 0 || 100 < i) {
+            bp->brd[i] = SENTINEL;
+        } else {
+            bp->brd[i] = PAWN;
+        }
     }
 }
