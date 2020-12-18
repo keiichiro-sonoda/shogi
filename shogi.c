@@ -14,7 +14,7 @@ void showBoardNum(Board b) {
 
 // 盤面初期化
 void resetBoard(Board *bp) {
-    int i;
+    int i, row;
     u_char koma;
     for (i = 0; i < BRD_LEN; i++) {
         if (i < 10 || i % 10 == 0 || 100 < i) {
@@ -41,7 +41,7 @@ void resetBoard(Board *bp) {
         else if (i == 28 || i == 82) {
             koma = BISHOP;
         }
-        else if (i / 10 == 3) {
+        else if ((row = i / 10) == 3 || row == 7) {
             koma = PAWN;
         }
         else {
