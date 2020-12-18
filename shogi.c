@@ -32,6 +32,12 @@ void resetBoard(Board *bp) {
         else if (i == 14 || i == 16 || i == 94 || i == 96) {
             koma = GOLD;
         }
+        else if (i == 15 || i == 95) {
+            koma = KING;
+        }
+        else if (i == 22 || i == 88) {
+            koma = ROOK;
+        }
         else {
             koma = EMPTY;
         }
