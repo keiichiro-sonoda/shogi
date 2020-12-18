@@ -28,8 +28,10 @@ void showBoard(Board b) {
             str[k++] = PIECES_CHAR[koma & 0xf];
             if (koma & TURN) {
                 str[k++] = '2';
-            } else {
+            } else if (koma) {
                 str[k++] = '1';
+            } else {
+                str[k++] = 32;
             }
             str[k++] = 32;
         }
