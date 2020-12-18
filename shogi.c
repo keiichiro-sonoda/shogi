@@ -23,10 +23,9 @@ void showBoard(Board b) {
         str[k++] = b.hold[i | 8] + '0';
         str[k++] = ' ';
     }
-    str[k] = 0;
-    k = strcatPlus(str, "\n-------------------------------------\n", BUF_LEN);
+    str[k++] = '\n';
     for (i = 0; i < SIDE_LEN; i++) {
-        str[k++] = '|';
+        str[k++] = ' ';
         for (j = 0; j < SIDE_LEN; j++) {
             if ((koma = b.brd[i * 10 + j + 11]) & PROMOTED) {
                 str[k++] = '+';
@@ -41,11 +40,10 @@ void showBoard(Board b) {
             } else {
                 str[k++] = ' ';
             }
-            str[k++] = '|';
+            str[k++] = ' ';
         }
         str[k] = 0;
-        //str[k++] = '\n';
-        k = strcatPlus(str, "\n-------------------------------------\n", BUF_LEN);
+        str[k++] = '\n';
     }
     str[k] = 0;
     puts(str);
