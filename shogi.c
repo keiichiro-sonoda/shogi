@@ -16,7 +16,8 @@ void resetBoard(Board *bp) {
     for (int i = 0; i < BRD_LEN; i++) {
         if (i < 10 || i % 10 == 0 || 100 < i) {
             bp->brd[i] = SENTINEL;
-        } else {
+        }
+        else {
             bp->brd[i] = EMPTY;
         }
     }

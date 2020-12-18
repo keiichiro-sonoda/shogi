@@ -13,13 +13,16 @@
 enum PIECES {EMPTY, PAWN, LANCE, KNIGHT, SILVER, GOLD, BISHOP, ROOK, KING, SENTINEL=0xff};
 
 // 駒に付加されるフラグ
-// 5ビット目: 成フラグ, 6ビット目: 手番フラグ
-enum FLAGS {PROMOTED = 0b10000, TURN = 0b100000};
+// 5ビット目: 手番フラグ, 6ビット目: 成フラグ
+enum FLAGS {TURN = 0b10000, PROMOTED = 0b100000};
 
 // 盤面型
 // 番兵を含む111要素の符号なし文字型配列
+// 各種持ち駒と手番フラグの和 (論理和) を添字として, 持ち駒の数を保持する
+// 添字 0 と 8 は使わない?
 typedef struct board {
     u_char brd[BRD_LEN];
+    u_char hold[16];
 } Board;
 
 // 盤面表示してみたい (とりあえず数値)
