@@ -14,7 +14,8 @@
 #define printSize(x) printf("%ld\n", sizeof(x))
 // 下位8ビット (1バイト) のみ16進表示
 #define printByteHex(x) printf("%02x", (x) & 0xff)
-// サイズを与えることでオーバーフロー検知?
-#define strcatSize(dst, src, dst_size) if (strlen(dst) + strlen(src) < dst_size) strcat(dst, src)
+
+// 長さを返り値とする
+int strcatPlus(char *dst, const char *src, int dst_size);
 
 #endif
