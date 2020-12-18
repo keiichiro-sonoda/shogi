@@ -18,6 +18,7 @@ void showBoard(Board b) {
     char str[BUF_LEN];
     u_char koma;
     k = 0;
+    printDecimal(k += 2);
     for (i = 0; i < SIDE_LEN; i++) {
         for (j = 0; j < SIDE_LEN; j++) {
             if ((koma = b.brd[i * 10 + j + 11]) & PROMOTED) {
