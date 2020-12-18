@@ -38,10 +38,7 @@ void showBoard(Board b) {
         str[k++] = 10;
     }
     str[k] = 0;
-    //puts(str);
-    printf("%s", str);
-    printDecimal('1');
-    printDecimal('2');
+    puts(str);
 }
 
 // 盤面初期化
