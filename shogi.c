@@ -20,28 +20,28 @@ void showBoard(Board b) {
     k = 0;
     for (i = PAWN; i < KING; i++) {
         str[k++] = PIECES_CHAR[i];
-        str[k++] = b.hold[i] + 48;
-        str[k++] = 32;
+        str[k++] = b.hold[i | 8] + '0';
+        str[k++] = ' ';
     }
     str[k++] = 10;
     for (i = 0; i < SIDE_LEN; i++) {
         for (j = 0; j < SIDE_LEN; j++) {
             if ((koma = b.brd[i * 10 + j + 11]) & PROMOTED) {
-                str[k++] = 43;
+                str[k++] = '+';
             } else {
-                str[k++] = 32;
+                str[k++] = ' ';
             }
             str[k++] = PIECES_CHAR[koma & 0xf];
             if (koma & TURN) {
-                str[k++] = 50;
+                str[k++] = '2';
             } else if (koma) {
-                str[k++] = 49;
+                str[k++] = '1';
             } else {
-                str[k++] = 32;
+                str[k++] = ' ';
             }
-            str[k++] = 32;
+            str[k++] = ' ';
         }
-        str[k++] = 10;
+        str[k++] = '\n';
     }
     str[k] = 0;
     puts(str);
@@ -75,10 +75,10 @@ void resetBoard(Board *bp) {
         }
         else if (i == 28 || i == 82) {
             koma = BISHOP;
+            koma |= PROMOTED;
         }
         else if ((row = i / 10) == 3 || row == 7) {
             koma = PAWN;
-            koma |= PROMOTED;
         }
         else {
             koma = EMPTY;
@@ -91,6 +91,7 @@ void resetBoard(Board *bp) {
     for (i = 0; i < HOLD_LEN; i++) {
         bp->hold[i] = 0;
     }
+    bp->hold[BISHOP | TURN] = 3;
     /*
     for (int i = 0; i < SIDE_LEN + 2; i++) {
         for (int j = 0; j < SIDE_LEN + 1; j++) {
