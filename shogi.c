@@ -16,18 +16,25 @@ void showBoardNum(Board b) {
 void showBoard(Board b) {
     int i, j, k;
     char str[BUF_LEN];
+    u_char koma;
     k = 0;
     for (i = 0; i < SIDE_LEN; i++) {
         for (j = 0; j < SIDE_LEN; j++) {
-            str[k++] = PIECES_CHAR[b.brd[i * 10 + j + 11] & 0xf];
-            str[k++] = ' ';
+            koma = b.brd[i * 10 + j + 11];
+            if (koma & PROMOTED) {
+                str[k++] = 43;
+            } else {
+                str[k++] = 32;
+            }
+            str[k++] = PIECES_CHAR[koma & 0xf];
+            str[k++] = 32;
         }
         str[k++] = 10;
     }
     str[k] = 0;
     //puts(str);
     printf("%s", str);
-    printDecimal(' ');
+    printDecimal('+');
 }
 
 // 盤面初期化
@@ -61,6 +68,7 @@ void resetBoard(Board *bp) {
         }
         else if ((row = i / 10) == 3 || row == 7) {
             koma = PAWN;
+            koma |= PROMOTED;
         }
         else {
             koma = EMPTY;
