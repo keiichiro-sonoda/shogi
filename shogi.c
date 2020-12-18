@@ -15,12 +15,13 @@ void showBoardNum(Board b) {
 // 盤面の駒をアルファベットで表示したい
 void showBoard(Board b) {
     int i, j, k;
-    char str[BUF_LEN];
+    char str[BUF_LEN] = {'\0'};
     u_char koma;
     k = strcatPlus(str, "hold2: ", BUF_LEN);
     for (i = PAWN; i < KING; i++) {
         str[k++] = PIECES_CHAR[i];
         str[k++] = b.hold[i | 8] + '0';
+        str[k++] = ':';
         str[k++] = ' ';
     }
     str[k++] = '\n';
@@ -94,7 +95,7 @@ void resetBoard(Board *bp) {
     for (i = 0; i < HOLD_LEN; i++) {
         bp->hold[i] = 0;
     }
-    bp->hold[BISHOP | TURN] = 3;
+    bp->hold[BISHOP | 8] = 3;
     /*
     for (int i = 0; i < SIDE_LEN + 2; i++) {
         for (int j = 0; j < SIDE_LEN + 1; j++) {
