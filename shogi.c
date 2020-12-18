@@ -20,15 +20,18 @@ void showBoard(Board b) {
     u_char koma;
     k = strcatPlus(str, "hold2: ", BUF_LEN);
     for (i = PAWN; i < KING; i++) {
+        if (i != PAWN) {
+            str[k++] = ',';
+            str[k++] = ' ';
+        }
         str[k++] = PIECES_CHAR[i];
         snprintf(tmp, BUF_LEN, ":%d", b.hold[i | 8]);
         k = strcatPlus(str, tmp, BUF_LEN);
-        str[k++] = ',';
-        str[k++] = ' ';
     }
     str[k++] = '\n';
+    str[k] = 0;
+    k = strcatPlus(str, "\n 9   8   7   6   5   4   3   2   1\n", BUF_LEN);
     for (i = 0; i < SIDE_LEN; i++) {
-        str[k++] = ' ';
         for (j = 0; j < SIDE_LEN; j++) {
             if ((koma = b.brd[i * 10 + j + 11]) & PROMOTED) {
                 str[k++] = '+';
@@ -97,7 +100,7 @@ void resetBoard(Board *bp) {
     for (i = 0; i < HOLD_LEN; i++) {
         bp->hold[i] = 0;
     }
-    bp->hold[BISHOP | 8] = 255;
+    bp->hold[PAWN | 8] = 100;
     /*
     for (int i = 0; i < SIDE_LEN + 2; i++) {
         for (int j = 0; j < SIDE_LEN + 1; j++) {
