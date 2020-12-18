@@ -20,13 +20,17 @@ void showBoard(Board b) {
     k = 0;
     for (i = 0; i < SIDE_LEN; i++) {
         for (j = 0; j < SIDE_LEN; j++) {
-            koma = b.brd[i * 10 + j + 11];
-            if (koma & PROMOTED) {
+            if ((koma = b.brd[i * 10 + j + 11]) & PROMOTED) {
                 str[k++] = 43;
             } else {
                 str[k++] = 32;
             }
             str[k++] = PIECES_CHAR[koma & 0xf];
+            if (koma & TURN) {
+                str[k++] = '2';
+            } else {
+                str[k++] = '1';
+            }
             str[k++] = 32;
         }
         str[k++] = 10;
