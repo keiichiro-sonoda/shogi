@@ -41,6 +41,9 @@ void resetBoard(Board *bp) {
         else if (i == 28 || i == 82) {
             koma = BISHOP;
         }
+        else if (i / 10 == 3) {
+            koma = PAWN;
+        }
         else {
             koma = EMPTY;
         }
