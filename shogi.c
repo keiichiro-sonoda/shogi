@@ -2,16 +2,18 @@
 
 // 盤面表示してみたい (とりあえず数値)
 void showBoardNum(Board b) {
-    for (int i = 0; i < 111; i++) {
-        printByteHex(b.brd[i]);
-        putchar(' ');
+    for (int i = 0; i < SIDE_LEN; i++) {
+        for (int j = 0; j < SIDE_LEN; j++) {
+            printByteHex(b.brd[(i + 1) * 9 + j + 1]);
+            putchar(' ');
+        }
+        putchar(10);
     }
-    puts("");
 }
 
 void resetBoard(Board *bp) {
     int i;
-    for (i = 0; i < 111; i++) {
+    for (i = 0; i < BRD_LEN; i++) {
         bp->brd[i] = EMPTY;
     }
     for (i = 0; i < 10; i++) {

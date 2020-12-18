@@ -10,6 +10,6 @@
 // バイト数を表示
 #define printSize(x) printf("%ld\n", sizeof(x))
 // 下位8ビット (1バイト) のみ16進表示
-#define printByteHex(x) printf("%x", (x) & 0xff)
+#define printByteHex(x) printf("%02x", (x) & 0xff)
 
 #endif
