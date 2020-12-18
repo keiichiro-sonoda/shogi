@@ -15,9 +15,10 @@ void showBoardNum(Board b) {
 void resetBoard(Board *bp) {
     for (int i = 0; i < BRD_LEN; i++) {
         if (i < 10 || i % 10 == 0 || 100 < i) {
-            bp->brd[i] = SENTINEL;
+            bp->brd[i] = EMPTY;
         } else {
-            bp->brd[i] = PAWN;
+            //bp->brd[i] = PAWN;
+            bp->brd[i] = SENTINEL;
         }
     }
 }
